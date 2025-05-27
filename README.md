@@ -19,7 +19,7 @@ JOIN category c ON fc.category_id = c.category_id
 GROUP BY c.name
 ORDER BY avg_rental_duration DESC;
 ```
-2. Find the full names of customers who did not rent any movies in the most recent mont
+### 2. Find the full names of customers who did not rent any movies in the most recent mont
 ```sql
 SELECT c.first_name || ' ' || c.last_name AS full_name
 FROM customer c
@@ -32,7 +32,7 @@ WHERE c.customer_id NOT IN (
     )
 );
 ```
-3. Find the top 10 countries by total rental payment
+### 3. Find the top 10 countries by total rental payment
 ```sql
 SELECT co.country, 
        ROUND(SUM(p.amount), 2) AS total_payment
